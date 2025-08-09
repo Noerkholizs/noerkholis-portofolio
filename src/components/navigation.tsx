@@ -15,7 +15,7 @@ const routes = [
     },
     {
         label: "My Work",
-        href: "/mywork",
+        href: "#mywork",
         icon: GoProject,
         activeIcon: GoProjectRoadmap
     },
