@@ -21,7 +21,7 @@ const routes = [
     },
     {
         label: "Contact",
-        href: "/contact",
+        href: "#contact",
         icon: HiOutlineChatBubbleLeft,
         activeIcon: HiChatBubbleLeft
     },

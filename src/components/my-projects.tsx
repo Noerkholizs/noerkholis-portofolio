@@ -49,9 +49,9 @@
     }, [api]);
 
     return (
-      <div className="mx-auto py-40">
+      <div className="mx-auto">
 
-        <div className="flex justify-center mr-62 mt-3">
+        <div className="flex justify-center lg:mr-62 mt-3">
           <ChevronUp 
             size={65} 
             onClick={showPrev ? onPrev : undefined}
@@ -62,7 +62,7 @@
           />
         </div>
 
-          <h2 className={cn("text-3xl font-bold text-center mr-62")}>{heading}</h2>
+          <h2 className={cn("text-3xl font-bold text-center mr-60")}>{heading}</h2>
         <div className="lg:ml-72">
           <Carousel
             setApi={setApi}
@@ -96,17 +96,17 @@
           </Carousel>
         </div>
         
-        <div className="flex justify-center mr-62 mt-3">
+        <div className="flex justify-center lg:mr-62 mt-3">
           <Button 
             className="w-2xs hover:cursor-pointer hover:font-bold hover:bg-neutral-800"
             variant="outline" 
             asChild
             >
-              <Link href={link}>Let&apos; see</Link>
+              <Link href={link}>Let&apos;s see</Link>
           </Button>
         </div>
 
-        <div className="flex justify-center mr-62 mt-3">
+        <div className="flex justify-center lg:mr-62 mt-3">
           <ChevronDown 
           size={65} 
           onClick={showNext ? onNext : undefined}

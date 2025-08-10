@@ -12,7 +12,7 @@ const DashBoardLayout = ({children} : DashBoardLayoutPorps) => {
                 <Sidebar />
             </div>
 
-            <div className="w-full lg:ml-[300px]">
+            <div className="w-full lg:ml-[264px]">
                 <main className="h-full py-8">
                     {children}
                 </main>

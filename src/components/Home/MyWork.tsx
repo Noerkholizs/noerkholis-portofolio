@@ -67,17 +67,13 @@ export const MyWork = () => {
   return (
     <section id="mywork" className="py-20">
         <div className="mx-auto container">
-            <div className="space-y-20">
-              {/* {myProjects.map((project, index) => ( */}
-                <MyProjects
-                  {...myProjects[currentProjectIndex]}
-                  onNext={nextProject}
-                  onPrev={prevProject}
-                  showNext={currentProjectIndex < myProjects.length -1}
-                  showPrev={currentProjectIndex > 0}
-                />
-              {/* ))} */}
-            </div>
+            <MyProjects
+              {...myProjects[currentProjectIndex]}
+              onNext={nextProject}
+              onPrev={prevProject}
+              showNext={currentProjectIndex < myProjects.length -1}
+              showPrev={currentProjectIndex > 0}
+            />
         </div>
     </section>
   )
