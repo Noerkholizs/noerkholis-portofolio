@@ -1,20 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import { MyProjects } from "../my-projects";
 import { MyProjectsProps } from "@/types/mywork-types";
 
 const myProjects: MyProjectsProps[] = [
+  // {
+  //   heading: "Pagii HR Attendance",
+  //   paragraph: "loremipsum",
+  //   link: "pagii.co",
+  //   images: [
+  //     "/mywork/pagii-attd-history.png", 
+  //     "/mywork/pagii-shift-management.png", 
+  //     "/mywork/pagii-hr-dashboard.png", 
+  //     "/mywork/pagii-shift-setting.png", 
+  //   ]
+  // },
   {
-    heading: "Pagii HR Attendance",
+    heading: "Pagii Ordering Merchant",
     paragraph: "loremipsum",
     link: "pagii.co",
     images: [
-      "/mywork/pagii-attd-history.png", 
-      "/mywork/pagii-shift-management.png", 
-      "/mywork/pagii-hr-dashboard.png", 
-      "/mywork/pagii-shift-setting.png", 
+      "/mywork/merchant-voucher.png",
+      "/mywork/merchant-laporan-order.png",
+      "/mywork/merchant-laporan-order.png",
     ]
   },
   {
-    heading: "Pagii Ordering Merchant",
+    heading: "Pagii Orderinggggg",
     paragraph: "loremipsum",
     link: "pagii.co",
     images: [
@@ -37,19 +50,33 @@ const myProjects: MyProjectsProps[] = [
 
 
 export const MyWork = () => {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) => 
+      prev === myProjects.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) => 
+      prev === 0 ?  myProjects.length - 1 : prev - 1
+    );
+  };
+ 
   return (
-    <section id="mywork" className="py-40">
+    <section id="mywork" className="py-20">
         <div className="mx-auto container">
             <div className="space-y-20">
-              {myProjects.map((project, index) => (
+              {/* {myProjects.map((project, index) => ( */}
                 <MyProjects
-                  key={index}
-                  heading={project.heading}
-                  paragraph={project.paragraph}
-                  images={project.images}
-                  link={project.link}
+                  {...myProjects[currentProjectIndex]}
+                  onNext={nextProject}
+                  onPrev={prevProject}
+                  showNext={currentProjectIndex < myProjects.length -1}
+                  showPrev={currentProjectIndex > 0}
                 />
-              ))}
+              {/* ))} */}
             </div>
         </div>
     </section>

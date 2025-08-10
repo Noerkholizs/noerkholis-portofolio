@@ -4,7 +4,7 @@ import { TechStacks } from '../tech-stacks';
 
 export const Home = () => {
   return (
-    <div className="min-h-screen flex items-center">
+    <div className="container mx-auto flex items-center">
       <div className="mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
         {/* Image Section - Made larger */}
         <div className="flex-1/4 order-1 lg:order-2 flex justify-center"> 
