@@ -8,7 +8,7 @@ const myProjects: MyProjectsProps[] = [
   {
     heading: "HR Attendance",
     paragraph: "loremipsum",
-    link: "pagii.co",
+    link: "https://portal.pagii.co/",
     images: [
       "/mywork/pagii-hr-dashboard.png", 
       "/mywork/pagii-shift-management.png", 
@@ -19,7 +19,7 @@ const myProjects: MyProjectsProps[] = [
   {
     heading: "Merchant",
     paragraph: "loremipsum",
-    link: "pagii.co",
+    link: "https://sandbox-merchant.sandbox.co.id/",
     images: [
       "/mywork/merchant-login.png",
       "/mywork/merchant-ubah-produk.png",
@@ -30,7 +30,7 @@ const myProjects: MyProjectsProps[] = [
   {
     heading: "Ordering Shop",
     paragraph: "loremipsum",
-    link: "pagii.co",
+    link: "https://shop.pagii.co/roketrasa-1/home",
     images: [
       "/mywork/shop-ordering-dashboard.png",
       "/mywork/shop-checkout.png",

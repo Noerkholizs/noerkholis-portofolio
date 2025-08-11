@@ -8,7 +8,7 @@
   import { Button } from "./ui/button";
   import Link from "next/link";
   import { ChevronUp, ChevronDown } from "lucide-react";
-  import { Card, CardContent } from "@/components/ui/card";
+  import { Card } from "@/components/ui/card";
   import {
     Carousel,
     CarouselContent,
@@ -102,7 +102,7 @@
             variant="outline" 
             asChild
             >
-              <Link href={link}>Let&apos;s see</Link>
+              <Link href={link} target="_blank" rel="noopener noreferrer">Let&apos;s see</Link>
           </Button>
         </div>
 
