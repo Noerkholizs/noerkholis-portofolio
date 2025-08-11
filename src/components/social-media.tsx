@@ -12,20 +12,22 @@ interface SocialMediaProps {
     className: string;
 }
 
+const ctaLinkEmail = "https://mail.google.com/mail/?view=cm&to=noerkholis.madjid@gmail.com&su=Job%20Opportunity&body=Halo%20Nurkholis%2C%0A%0ASaya%20tertarik%20untuk%20bekerja%20sama%20dengan%20Anda..."
+
 
 const allSocialMedia: SocialMediaProps[] = [
-  { icon: RiWhatsappFill, link: "https://wa.me/085157447629", className: "hover:text-green-500" },
-  { icon: MdEmail, link: "mailto:example@email.com", className: "hover:text-red-400" },
-  { icon: RiInstagramFill, link: "https://instagram.com", className: "hover:text-pink-500" },
-  { icon: RiGithubFill, link: "https://github.com", className: "hover:text-gray-400" },
-  { icon: FaLinkedin, link: "https://linkedin.com", className: "hover:text-blue-500" },
+  { icon: RiWhatsappFill, link: "https://wa.me/+6285157447629", className: "hover:text-green-500" },
+  { icon: MdEmail, link: ctaLinkEmail, className: "hover:text-red-400" },
+  { icon: RiInstagramFill, link: "https://instagram.com/noerkholis.madjid", className: "hover:text-pink-500" },
+  { icon: RiGithubFill, link: "https://github.com/Noerkholizs", className: "hover:text-gray-400" },
+  { icon: FaLinkedin, link: "https://linkedin.com/in/noerkholis", className: "hover:text-blue-500" },
 ];
 
 const sidebarSocialMedia: SocialMediaProps[] = [
 
-  { icon: RiInstagramFill, link: "https://instagram.com", className: "hover:text-pink-500" },
-  { icon: RiGithubFill, link: "https://github.com", className: "hover:text-gray-400" },
-  { icon: FaLinkedin, link: "https://linkedin.com", className: "hover:text-blue-500" },
+  { icon: RiInstagramFill, link: "https://instagram.com/noerkholis.madjid", className: "hover:text-pink-500" },
+  { icon: RiGithubFill, link: "https://github.com/Noerkholizs", className: "hover:text-gray-400" },
+  { icon: FaLinkedin, link: "https://linkedin.com/in/noerkholis", className: "hover:text-blue-500" },
 ];
 
 const SocialMedia = ({icon: Icon, link, className} : SocialMediaProps) => {
