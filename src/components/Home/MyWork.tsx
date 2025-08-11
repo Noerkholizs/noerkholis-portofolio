@@ -5,45 +5,36 @@ import { MyProjects } from "../my-projects";
 import { MyProjectsProps } from "@/types/mywork-types";
 
 const myProjects: MyProjectsProps[] = [
-  // {
-  //   heading: "Pagii HR Attendance",
-  //   paragraph: "loremipsum",
-  //   link: "pagii.co",
-  //   images: [
-  //     "/mywork/pagii-attd-history.png", 
-  //     "/mywork/pagii-shift-management.png", 
-  //     "/mywork/pagii-hr-dashboard.png", 
-  //     "/mywork/pagii-shift-setting.png", 
-  //   ]
-  // },
   {
-    heading: "Pagii Ordering Merchant",
+    heading: "HR Attendance",
     paragraph: "loremipsum",
     link: "pagii.co",
     images: [
+      "/mywork/pagii-hr-dashboard.png", 
+      "/mywork/pagii-shift-management.png", 
+      "/mywork/pagii-attd-history.png", 
+      "/mywork/pagii-shift-setting.png", 
+    ]
+  },
+  {
+    heading: "Merchant",
+    paragraph: "loremipsum",
+    link: "pagii.co",
+    images: [
+      "/mywork/merchant-login.png",
+      "/mywork/merchant-ubah-produk.png",
       "/mywork/merchant-voucher.png",
-      "/mywork/merchant-laporan-order.png",
       "/mywork/merchant-laporan-order.png",
     ]
   },
   {
-    heading: "Pagii Orderinggggg",
-    paragraph: "loremipsum",
-    link: "pagii.co",
-    images: [
-      "/mywork/merchant-voucher.png",
-      "/mywork/merchant-laporan-order.png",
-      "/mywork/merchant-laporan-order.png",
-    ]
-  },
-  {
-    heading: "Pagii Ordering Shop",
+    heading: "Ordering Shop",
     paragraph: "loremipsum",
     link: "pagii.co",
     images: [
       "/mywork/shop-ordering-dashboard.png",
       "/mywork/shop-checkout.png",
-      "/mywork/shop-checkout.png",
+      "/mywork/shop-success-payment.png",
     ]
   },
 ]
@@ -69,6 +60,7 @@ export const MyWork = () => {
         <div className="mx-auto container">
             <MyProjects
               {...myProjects[currentProjectIndex]}
+              key={currentProjectIndex}
               onNext={nextProject}
               onPrev={prevProject}
               showNext={currentProjectIndex < myProjects.length -1}

@@ -62,7 +62,7 @@
           />
         </div>
 
-          <h2 className={cn("text-3xl font-bold text-center mr-60")}>{heading}</h2>
+        <h2 className={cn("text-3xl font-bold text-center mr-60")}>{heading}</h2>
         <div className="lg:ml-72">
           <Carousel
             setApi={setApi}
@@ -70,7 +70,7 @@
           >
             <CarouselContent >
               {images.map((image, index) => (
-                <CarouselItem key={index} className="lg:basis-[55%] flex items-center justify-center max-w-5xl pt-6">
+                <CarouselItem key={index} className="lg:basis-[55%] flex items-center justify-center pt-6">
                   <Card className={cn(
                     "shadow transition-all duration-300 border-none",
                     activeIndex === index 
@@ -80,8 +80,8 @@
                     <Image
                       src={image}
                       alt={heading}
-                      width={700}
-                      height={600}
+                      width={2500}
+                      height={1250}
                       className="object-cover rounded-3xl"
                     />
                   </Card>
