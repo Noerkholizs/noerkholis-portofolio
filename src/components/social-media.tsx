@@ -21,6 +21,13 @@ const allSocialMedia: SocialMediaProps[] = [
   { icon: FaLinkedin, link: "https://linkedin.com", className: "hover:text-blue-500" },
 ];
 
+const sidebarSocialMedia: SocialMediaProps[] = [
+
+  { icon: RiInstagramFill, link: "https://instagram.com", className: "hover:text-pink-500" },
+  { icon: RiGithubFill, link: "https://github.com", className: "hover:text-gray-400" },
+  { icon: FaLinkedin, link: "https://linkedin.com", className: "hover:text-blue-500" },
+];
+
 const SocialMedia = ({icon: Icon, link, className} : SocialMediaProps) => {
     return (
         <>
@@ -50,4 +57,16 @@ export const SocialMediaGroup = () => {
           </div>
         </div>
     );
+};
+
+export const SidebarSocialMedia = () => {
+    return (
+        <div className="flex gap-4">
+            {sidebarSocialMedia.map(({icon: Icon, className, link}, index) => (
+            <Link key={index} href={link} target="_blank" rel="noopener noreferrer">
+                <Icon size={30} className={cn(className, "transition-colors")} />
+            </Link>
+            ))}
+        </div>
+    )
 };

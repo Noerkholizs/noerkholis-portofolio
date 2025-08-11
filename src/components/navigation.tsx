@@ -2,56 +2,59 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { GoHome, GoHomeFill, GoProject, GoProjectRoadmap } from "react-icons/go"
-import { usePathname } from "next/navigation";
-import { HiChatBubbleLeft, HiOutlineChatBubbleLeft } from "react-icons/hi2";
+import { useEffect, useState } from "react";
 
 const routes = [
-    {
-        label: "Home",
-        href: "/",
-        icon: GoHome,
-        activeIcon: GoHomeFill
-    },
-    {
-        label: "My Work",
-        href: "#mywork",
-        icon: GoProject,
-        activeIcon: GoProjectRoadmap
-    },
-    {
-        label: "Contact",
-        href: "#contact",
-        icon: HiOutlineChatBubbleLeft,
-        activeIcon: HiChatBubbleLeft
-    },
+  { label: "Home", href: "#home" },
+  { label: "My Work", href: "#mywork" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Navigation = () => {
-    const pathname = usePathname();
+    const [activeSection, setActiveSection] = useState("home");
 
-    return (
-        <ul className="flex flex-col">
-            {routes.map((item) => {
-                const isActive = item.href === pathname;
-                // const Icon = isActive ? item.activeIcon : item.icon;
+    useEffect(() => {
+        const sections = routes.map((route) => 
+            document.querySelector(route.href) as HTMLElement
+        );
 
-                return (
-                    <Link key={item.href} href={item.href} className="w-full max-w-[500px]">
-                        <div className={cn(
-                            "flex items-center gap-4 p-8 rounded-lg font-medium transition-all justify-center",
-                            isActive 
-                                ? "text-white shadow-md"
-                                : "text-neutral-500 hover:text-white"
-                        )}>
-                            {/* <Icon className="size-5 flex-shrink-0" /> */}
-                            <span className={cn("truncate font-medium tracking-wide", isActive && "font-extrabold")}>
-                                {item.label}
-                            </span>
-                        </div>
-                    </Link>
-                )
-            })}
-        </ul>
-    );
+        const observer = new IntersectionObserver((entires) => {
+            entires.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id)
+                }
+            });
+        },
+        { threshold: 0.6});
+
+        sections.forEach((sec) => {
+            if (sec) observer.observe(sec)
+        })
+
+        return () => observer.disconnect();
+    }, [])
+    
+   return (
+    <ul className="flex flex-col gap-10">
+      {routes.map((item) => {
+        const isActive = activeSection === item.href.replace("#", "");
+
+        return (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className={cn(
+                "block text-sm tracking-wide transition-colors text-left",
+                isActive
+                  ? "font-bold text-white"
+                  : "text-neutral-500 hover:text-white"
+              )}
+            >
+              {item.label}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
