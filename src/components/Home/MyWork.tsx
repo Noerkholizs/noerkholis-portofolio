@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MyProjects } from "../my-projects";
 import { MyProjectsProps } from "@/types/mywork-types";
+import { ResponsiveContainer } from "../ui/responsive-container";
 
 const myProjects: MyProjectsProps[] = [
   {
@@ -39,7 +40,6 @@ const myProjects: MyProjectsProps[] = [
   },
 ]
 
-
 export const MyWork = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
@@ -56,17 +56,17 @@ export const MyWork = () => {
   };
  
   return (
-    <section id="mywork" className="py-20">
-        <div className="mx-auto container">
-            <MyProjects
-              {...myProjects[currentProjectIndex]}
-              key={currentProjectIndex}
-              onNext={nextProject}
-              onPrev={prevProject}
-              showNext={currentProjectIndex < myProjects.length -1}
-              showPrev={currentProjectIndex > 0}
-            />
-        </div>
+    <section id="mywork" className="section-padding">
+      <ResponsiveContainer>
+        <MyProjects
+          {...myProjects[currentProjectIndex]}
+          key={currentProjectIndex}
+          onNext={nextProject}
+          onPrev={prevProject}
+          showNext={currentProjectIndex < myProjects.length -1}
+          showPrev={currentProjectIndex > 0}
+        />
+      </ResponsiveContainer>
     </section>
   )
 };

@@ -4,7 +4,7 @@ import { MyWork } from "@/components/Home/MyWork";
 
 export default function Page() {
   return (
-    <main className=" border-blue-800">
+    <main className="min-h-screen bg-gradient-to-br from-background via-background to-background/95">
       <Home />
       <MyWork />
       <Contact />

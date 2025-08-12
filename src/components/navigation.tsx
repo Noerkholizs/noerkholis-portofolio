@@ -18,8 +18,8 @@ export const Navigation = () => {
             document.querySelector(route.href) as HTMLElement
         );
 
-        const observer = new IntersectionObserver((entires) => {
-            entires.forEach((entry) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setActiveSection(entry.target.id)
                 }
@@ -35,7 +35,7 @@ export const Navigation = () => {
     }, [])
     
    return (
-    <ul className="flex flex-col gap-10">
+    <ul className="flex flex-col gap-6 lg:gap-10">
       {routes.map((item) => {
         const isActive = activeSection === item.href.replace("#", "");
 
@@ -44,13 +44,19 @@ export const Navigation = () => {
             <Link
               href={item.href}
               className={cn(
-                "block text-sm tracking-wide transition-colors text-left",
+                "block text-base lg:text-lg tracking-wide transition-all duration-200 text-left relative group",
                 isActive
                   ? "font-bold text-white"
                   : "text-neutral-500 hover:text-white"
               )}
             >
-              {item.label}
+              <span className="relative">
+                {item.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"></span>
+                )}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span>
+              </span>
             </Link>
           </li>
         );

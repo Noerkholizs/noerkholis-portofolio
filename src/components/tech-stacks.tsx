@@ -33,23 +33,27 @@ export const TechStacks = () => {
 
   return (
     <div className="mt-8">
-      <div className="flex items-start justify-start gap-4">
+      <div className="flex flex-col sm:flex-row items-start justify-start gap-6">
         {categoryOrder.map((category, categoryIndex) => (
-          <div key={category} className="flex items-center">
-            <div className="flex gap-4">
+          <div key={category} className="flex flex-col sm:flex-row items-center">
+            <div className="flex flex-wrap gap-4 justify-center">
               {groupedTech[category]?.map((tech) => (
-                <div key={tech.label} className="flex items-center gap-1">
+                <div 
+                  key={tech.label} 
+                  className="flex items-center justify-center rounded-lg hover:bg-white/10 transition-all duration-200 hover:scale-110"
+                  title={tech.label}
+                >
                   <Image 
                     alt={tech.label}
                     src={tech.icon}
                     width={32}
                     height={32}
-                    className="object-contain"
+                    className="object-contain w-8 h-8"
                   />
                 </div>
               ))}
             {categoryIndex < categoryOrder.length - 1 && (
-                <div className="mx-3 h-auto w-0.5 bg-white"></div>
+              <div className="hidden sm:block mx-3 h-8 w-0.5 bg-white/30"></div>
             )}
             </div>
           </div>
